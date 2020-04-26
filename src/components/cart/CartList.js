@@ -27,13 +27,13 @@ class CartList extends Component {
                     Cart
          </DropdownToggle>
                 <DropdownMenu right>
-                 
-                     
-                            <DropdownItem >
+                    {
+                        this.props.cart.map(cartItem => (
+                            <DropdownItem  >
                                 option1
                             </DropdownItem>
-                     
-                    
+                        ))
+                    }
                     <DropdownItem divider />
                     <DropdownItem>
                         Go to payment step
@@ -56,7 +56,7 @@ class CartList extends Component {
 
 function mapStateToProps(state){
     return{
-        cart:state.cartReducer
+        cart:state.addtoCartReducer
     }
 }
 

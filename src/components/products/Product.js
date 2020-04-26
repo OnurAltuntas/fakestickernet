@@ -12,7 +12,8 @@ import { bindActionCreators } from 'redux';
 class Product extends Component {
 
   addToCart = (product) => {
-    //this.props.actions.addtoCart(product)
+    this.props.actions.addtoCart(product)
+    
     alertify.success("sepete eklendi")
   }
 
@@ -35,13 +36,13 @@ class Product extends Component {
 
 function mapStateToProps(state) {
   return {
-      currentCart: state.addtoCartReducer
+      Cart: state.addtoCartReducer
   }
 }
 
 function mapDispatchToProps(dispatch){
   return {
-      action:{
+      actions:{
           addtoCart:bindActionCreators(addtoCartActions.addtoCart,dispatch)
       }
   }
