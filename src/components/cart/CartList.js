@@ -7,14 +7,14 @@ import {
     DropdownMenu,
     DropdownItem,
     NavItem,
-    NavLink
+    NavLink,
+    Badge
 } from 'reactstrap';
 
 
 class CartList extends Component {
     renderEmpty() {
         return (
-
             <NavItem>
                 <NavLink >Cart is empty</NavLink>
             </NavItem>
@@ -29,8 +29,9 @@ class CartList extends Component {
                 <DropdownMenu right>
                     {
                         this.props.cart.map(cartItem => (
-                            <DropdownItem  >
-                                option1
+                            <DropdownItem >
+                                {cartItem.product.productName}
+                                <Badge color="danger">{cartItem.quantity} </Badge>
                             </DropdownItem>
                         ))
                     }
@@ -47,7 +48,7 @@ class CartList extends Component {
         return (
             <div>
                 {
-                     this.renderList()
+               this.props.cart.length > 0 ? this.renderList() : this.renderEmpty()
                 }
             </div>
         )
@@ -59,7 +60,5 @@ function mapStateToProps(state){
         cart:state.addtoCartReducer
     }
 }
-
-
 
 export default connect(mapStateToProps)(CartList);

@@ -6,6 +6,7 @@ import CartList from '../cart/CartList';
 import CategoryList from "../categories/CategoryList"
 
 
+
 class App extends Component {
   render() {
     return (

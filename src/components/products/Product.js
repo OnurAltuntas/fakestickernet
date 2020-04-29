@@ -2,55 +2,51 @@ import React, { Component } from 'react'
 import { connect } from "react-redux"
 import {
   Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button, Badge, Table, ListGroupItem, ListGroup,
+  CardTitle, CardSubtitle, Button, Badge, Table, ListGroupItem, ListGroup, Row, Container, Col,
 } from 'reactstrap';
 
 import * as addtoCartActions from "../../redux/actions/addtocartActions"
 import * as productActions from "../../redux/actions/productActions"
-
-
 import alertify from "alertifyjs"
 import { bindActionCreators } from 'redux';
 
 class Product extends Component {
 
-  addToCart = (product) => {
-    this.props.actions.addtoCart(product)
-    alertify.success("sepete eklendi")
-  }
-
   componentDidMount() {
     this.props.actions.getProducts();
   }
 
+  addToCart = (product) => {
+    this.props.actions.addtoCart({quantity:1,product})
+    alertify.success("sepete eklendi")
+  }
+
+
   render() {
     return (
       <div>
-      <Table striped>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Username</th>
-        </tr>
-      </thead>
-      <tbody>
-      
-          {this.props.products.map(product =>(
-         
-            <tr>
-              <th>#</th>
-              <th> {Product.id}</th>
-              <th>{product.unitPrice}</th>
-              <th>{product.unitInStock}</th>
-           </tr>
-          ))}
-      
-        
-       
-      </tbody>
-    </Table>
+
+        <Container>
+          <Row xs="4">
+
+          
+              {this.props.products.map(product => (
+                <Col>
+                <Card>
+                  <CardImg top width="100%" src="https://github.githubassets.com/images/modules/logos_page/Octocat.png" alt="Card image cap" />
+                  <CardBody>
+                    <CardTitle>{product.id}</CardTitle>
+                    <CardSubtitle>{product.unitPrice}</CardSubtitle>
+                    <CardText>{product.unitInStock}</CardText>
+                    <Button onClick={() => this.addToCart(product)}> add</Button>
+                  </CardBody>
+                </Card>
+                </Col>
+              ))}
+
+          
+          </Row>
+        </Container>
       </div>
     )
   }
