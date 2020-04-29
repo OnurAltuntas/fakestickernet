@@ -11,6 +11,9 @@ class CategoryList extends Component {
     componentDidMount() {
         this.props.actions.getCategories()
     }
+    selectCategory=(category)=>{
+        this.props.actions.changeCategory(category)
+    }
     render() {
         return (
             <div> 
@@ -18,12 +21,13 @@ class CategoryList extends Component {
                 <ListGroup>
                         {
                             this.props.categories.map(category=>(
-                                <ListGroupItem key={category.id}>
+                                <ListGroupItem active={category.id===this.props.currentCategory.id} onClick={()=>this.selectCategory(category)} key={category.id}>
                                     {category.categoryName}
                                 </ListGroupItem>
                             ))
                         }
                 </ListGroup>
+                <h5>Selected Category{this.props.currentCategory.categoryName}</h5>
 
             </div>
         )
@@ -41,7 +45,9 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         actions: {
-            getCategories: bindActionCreators(categoryActions.getCategories, dispatch)
+            getCategories: bindActionCreators(categoryActions.getCategories, dispatch),
+            changeCategory: bindActionCreators(categoryActions.changeCategory, dispatch)
+            
         }
     }
 }

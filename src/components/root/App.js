@@ -11,13 +11,11 @@ class App extends Component {
     return (
       <div>
         <Navbar />
-        <Container>
+        <Container >
           <Row>
             <Col><CategoryList /></Col>
             <Col><Product /></Col>
-            <Col><Product /></Col>
-            <Col><Product /></Col>
-            <Col><Product /></Col>
+           
           </Row>
         </Container>
       </div>
