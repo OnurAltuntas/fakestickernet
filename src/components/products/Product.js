@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from "react-redux"
 import {
   Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button
+  CardTitle, CardSubtitle, Button,Badge
 } from 'reactstrap';
 
 import * as addtoCartActions from "../../redux/actions/addtocartActions"
@@ -19,6 +19,7 @@ class Product extends Component {
   render() {
     return (
       <div>
+      <h3><Badge color="warning">Stickers</Badge></h3>
       <Card>
           <CardImg top width="100%" src="https://github.githubassets.com/images/modules/logos_page/Octocat.png" alt="Card image cap" />
           <CardBody>

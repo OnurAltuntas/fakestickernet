@@ -3,15 +3,17 @@ import Navbar from '../navi/Navbar'
 import Product from '../products/Product'
 import { Container, Row, Col } from 'reactstrap';
 import CartList from '../cart/CartList';
+import CategoryList from "../categories/CategoryList"
 
 
 class App extends Component {
   render() {
     return (
       <div>
-      <Navbar />
+        <Navbar />
         <Container>
           <Row>
+            <Col><CategoryList /></Col>
             <Col><Product /></Col>
             <Col><Product /></Col>
             <Col><Product /></Col>
