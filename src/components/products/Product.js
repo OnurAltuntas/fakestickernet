@@ -13,7 +13,6 @@ class Product extends Component {
 
   addToCart = (product) => {
     this.props.actions.addtoCart(product)
-    
     alertify.success("sepete eklendi")
   }
 

@@ -4,6 +4,7 @@ import Product from '../products/Product'
 import { Container, Row, Col } from 'reactstrap';
 import CartList from '../cart/CartList';
 
+
 class App extends Component {
   render() {
     return (
@@ -16,7 +17,6 @@ class App extends Component {
             <Col><Product /></Col>
             <Col><Product /></Col>
           </Row>
-        
         </Container>
       </div>
     )
