@@ -14,7 +14,7 @@ import {
   NavbarText
 } from 'reactstrap';
 import CartList from '../cart/CartList';
-
+import {Link} from "react-router-dom"
 const MyNavbar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -23,7 +23,7 @@ const MyNavbar = (props) => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">FakeSticker.net</NavbarBrand>
+      <Link to = {"/"} >FakeSticker.net</Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>

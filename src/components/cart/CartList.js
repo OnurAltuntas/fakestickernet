@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from "react-redux"
 
 import { bindActionCreators } from 'redux';
-import * as addtoCartActions from "../../redux/actions/addtocartActions"
+import * as addtoCartActions from "../../redux/actions/addtoCartActions"
 import {Link} from "react-router-dom"
 import {
     UncontrolledDropdown,
@@ -34,7 +34,7 @@ class CartList extends Component {
                     {
                         this.props.cart.map(cartItem => (
                             <DropdownItem >
-                                <Badge color="danger" onClick ={()=>this.props.actions.removeFromCart(cartItem.product)}> </Badge>
+                                <Badge color="danger" onClick ={()=>this.props.actions.removeFromCart(cartItem.product)}>X</Badge>
                                 {cartItem.product.productName}
                                 <Badge color="success">{cartItem.quantity} </Badge>
                             </DropdownItem>

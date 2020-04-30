@@ -6,30 +6,30 @@ import {
   } from 'reactstrap';
 
 import { connect } from "react-redux"
-
+import alertify from "alertifyjs"
 import { bindActionCreators } from 'redux';
-import * as addtoCartActions from "../../redux/actions/addtocartActions"
+import * as addtoCartActions from "../../redux/actions/addtoCartActions"
 
 
 class CartDetails extends Component {
     removeFromCart =(product)=>{
         this.props.actions.removeFromCart(product)
+        alertify.error("removed from cart")
     }
 
     render() {
         return (
             <div>
                 <Container>
-                    <h3><Badge color="warning">Stickers</Badge></h3>
+                    <h3><Badge color="warning">Cart Details</Badge></h3>
                     <Row xs="5">
                         {this.props.cart.map(cartItem => (
                             <Col>
                                 <Card>
-                                    <CardImg top width="100%" src="https://github.githubassets.com/images/modules/logos_page/Octocat.png" alt="Card image cap" />
+                                    <CardImg top width="100%" src={cartItem.product.image} alt="Card image cap" />
                                     <CardBody>
-                                        <CardTitle>{cartItem.id}</CardTitle>
-                                        <CardSubtitle>{cartItem.unitPrice}</CardSubtitle>
-                                        <CardText>{cartItem.unitInStock}</CardText>
+                                        <CardText>{cartItem.product.productName}</CardText>
+                                        <CardSubtitle>Price :{cartItem.product.unitPrice}₺</CardSubtitle><br></br>
                                         <Button onClick={() => this.removeFromCart(cartItem.product)}> Remove</Button>
                                     </CardBody>
                                 </Card>
