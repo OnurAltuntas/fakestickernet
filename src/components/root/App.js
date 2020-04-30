@@ -12,11 +12,10 @@ class App extends Component {
     return (
       <div>
         <Navbar />
-        <Container >
+        <Container fluid={true} >
           <Row>
-            <Col><CategoryList /></Col>
-            <Col><Product /></Col>
-           
+            <Col xs="2"><CategoryList/></Col>
+            <Col xs="10"><Product /></Col>
           </Row>
         </Container>
       </div>

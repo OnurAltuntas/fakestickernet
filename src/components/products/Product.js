@@ -25,11 +25,10 @@ class Product extends Component {
   render() {
     return (
       <div>
-
+    
         <Container>
-          <Row xs="4">
-
-          
+        <h3><Badge color="warning">Stickers</Badge></h3>
+          <Row xs="5">
               {this.props.products.map(product => (
                 <Col>
                 <Card>
@@ -43,8 +42,6 @@ class Product extends Component {
                 </Card>
                 </Col>
               ))}
-
-          
           </Row>
         </Container>
       </div>
