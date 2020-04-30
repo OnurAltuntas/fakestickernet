@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 import Navbar from '../navi/Navbar'
-import Product from '../products/Product'
-import { Container, Row, Col } from 'reactstrap';
-import CartList from '../cart/CartList';
-import CategoryList from "../categories/CategoryList"
-
+import {Route,Switch} from "react-router-dom"
+import  Dashboard from "./Dashboard"
+import CartDetails from '../cart/CartDetails'
 
 
 class App extends Component {
@@ -12,12 +10,12 @@ class App extends Component {
     return (
       <div>
         <Navbar />
-        <Container fluid={true} >
-          <Row>
-            <Col xs="2"><CategoryList/></Col>
-            <Col xs="10"><Product /></Col>
-          </Row>
-        </Container>
+        <Switch>
+          <Route path="/" exact component={Dashboard}/>
+          <Route path="/product" exact component={Dashboard}/>
+          <Route path="/cart" exact component={CartDetails}/>
+        </Switch>
+        
       </div>
     )
   }

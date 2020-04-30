@@ -3,10 +3,8 @@ import { connect } from "react-redux"
 
 import { bindActionCreators } from 'redux';
 import * as addtoCartActions from "../../redux/actions/addtocartActions"
-
-
+import {Link} from "react-router-dom"
 import {
-    Nav,
     UncontrolledDropdown,
     DropdownToggle,
     DropdownMenu,
@@ -15,6 +13,7 @@ import {
     NavLink,
     Badge
 } from 'reactstrap';
+
 
 
 class CartList extends Component {
@@ -42,9 +41,9 @@ class CartList extends Component {
                         ))
                     }
                     <DropdownItem divider />
-                    <DropdownItem>
-                        Go to payment step
-          </DropdownItem>
+                    <DropdownItem >
+                        <Link to = {"/cart"} >Go to Cart</Link>
+                    </DropdownItem>
                 </DropdownMenu>
             </UncontrolledDropdown>
         );
