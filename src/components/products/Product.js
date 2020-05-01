@@ -4,7 +4,7 @@ import {
   Card, CardImg, CardText, CardBody,
   CardSubtitle, Button, Badge, Row, Container, Col,
 } from 'reactstrap';
-
+import {Link} from "react-router-dom"
 import { bindActionCreators } from 'redux';
 import * as addtoCartActions from "../../redux/actions/addtoCartActions"
 import * as productActions from "../../redux/actions/productActions"
@@ -37,7 +37,9 @@ class Product extends Component {
                   <CardImg top width="100%" src={product.image} id="UncontrolledTooltipExample" alt="Card image cap" />
                  
                   <CardBody>
-                  <CardText>{product.productName}</CardText>
+                  <CardText >
+                  <Link to={"/saveProduct/"+product.id}> {product.productName}</Link>
+                  </CardText>
                     <CardSubtitle>Price : {product.unitPrice}₺</CardSubtitle><br></br>
                     <Button onClick={() => this.addToCart(product)}> add</Button>
                   </CardBody>

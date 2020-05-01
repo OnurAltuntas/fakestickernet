@@ -3,5 +3,6 @@ export default {
     currentCategory:{categoryName:"Beverages"},
     categories:[],
     products:[{categoryName:"Beverages"}],
-    darkMode:{mode:"Day"}
+    darkMode:{mode:"Day"},
+    savedProduct:{}
 }
