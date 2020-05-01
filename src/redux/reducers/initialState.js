@@ -1,8 +1,8 @@
 export default {
     cart:[],
-    currentCategory:{categoryName:"Beverages"},
+    currentCategory:{},
     categories:[],
     products:[{categoryName:"Beverages"}],
     darkMode:{mode:"Day"},
-    savedProduct:{}
+    savedProduct:{productName:"name"}
 }

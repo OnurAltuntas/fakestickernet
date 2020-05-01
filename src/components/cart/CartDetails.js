@@ -14,7 +14,7 @@ import * as addtoCartActions from "../../redux/actions/addtoCartActions"
 class CartDetails extends Component {
     removeFromCart =(product)=>{
         this.props.actions.removeFromCart(product)
-        alertify.error("removed from cart")
+        alertify.success(product.productName+" removed from your cart!")
     }
 
     render() {

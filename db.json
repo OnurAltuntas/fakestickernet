@@ -5,7 +5,7 @@
       "categoryId": 2,
       "productName": "Visual Code",
       "image": "https://i1.wp.com/stickker.net/wp-content/uploads/2016/01/visual-studio.jpg.png?resize=324%2C324&ssl=1",
-      "unitPrice": "1",
+      "unitPrice": "2",
       "unitsInStock": 53
     },
     {
@@ -109,7 +109,7 @@
       "categoryId": 2,
       "productName": "Atatürk Siluet",
       "image": "https://i1.wp.com/stickker.net/wp-content/uploads/2017/06/12002131614088709776.png.png?resize=324%2C324&ssl=1",
-      "unitPrice":"<3",
+      "unitPrice": "<3",
       "unitsInStock": 39
     },
     {
@@ -615,6 +615,22 @@
       "image": "https://i0.wp.com/stickker.net/wp-content/uploads/2018/05/postman.png?resize=300%2C300&ssl=1",
       "unitsInStock": "2",
       "id": 78
+    },
+    {
+      "name": "BlueLight",
+      "categoryId": 1,
+      "unitPrice": "1",
+      "unitsInStock": "2",
+      "image": "https://i0.wp.com/stickker.net/wp-content/uploads/2020/03/9838A225-A853-44B8-8917-3B230C7340F5.png?resize=300%2C300&ssl=1",
+      "id": 79
+    },
+    {
+      "name": "Leylek",
+      "categoryId": 1,
+      "unitPrice": "2",
+      "unitsInStock": "2",
+      "image": "https://i1.wp.com/stickker.net/wp-content/uploads/2020/01/9F8A3BE6-92D5-4EF8-B355-E85C0EED6FC4.png?resize=300%2C300&ssl=1",
+      "id": 80
     }
   ],
   "categories": [

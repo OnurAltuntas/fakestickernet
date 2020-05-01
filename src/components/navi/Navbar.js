@@ -27,14 +27,15 @@ const MyNavbar = (props) => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
+           
             <NavItem>
-              <NavLink href="/components/">Stickers</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+              <NavLink href="https://github.com/OnurAltuntas">Github</NavLink>
             </NavItem>
           </Nav>
           <Nav>
+          <NavItem>
+              <NavLink><Link to="/saveProduct">Save Product(for Admin)</Link></NavLink>
+            </NavItem>
           <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
                 Sort by

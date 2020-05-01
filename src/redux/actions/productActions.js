@@ -13,8 +13,9 @@ export function updateProductSuccess(product) {
 }
 
 export function saveProductApi(product) {
-    return fetch("http//localhost:3000/products" + (product.id || ""),{
+    return fetch("http://localhost:3000/products/" + (product.id || ""),{
         method: product.id ? "PUT" : "POST",
+        headers: {"content-type":"application/json"},
         body: JSON.stringify(product),
     }).then(handleResponse).catch(handleError);
 }
@@ -25,17 +26,20 @@ export function saveProduct(product) {
             product.id ? dispatch(updateProductSuccess(savedProduct)) : dispatch(createProductSuccess(savedProduct));
         }).catch(error=>{
             throw error;
-        })
-    }
+        });
+    };
 }
 
 export async function handleResponse(response){
     if(response.ok){
-        return response.json;
+        return response.json();
+        console.log("eklendi");
     }
-
-    const error = await response.text()
-    throw new Error(error)
+    else{
+        const error = await response.text()
+        throw new Error(error)
+    }
+   
 }
 
 export function handleError(error){
