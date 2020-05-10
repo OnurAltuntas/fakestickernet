@@ -54,6 +54,6 @@ export function getProducts(categoryId) {
             url = url + "?categoryId=" + categoryId
         }
         return fetch(url).then(response => response.json())
-            .then(result => dispatch(getProductsSuccess(result)));
+        .then(result => dispatch(getProductsSuccess(result)));
     }
 }

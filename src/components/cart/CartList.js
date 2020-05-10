@@ -33,7 +33,7 @@ class CartList extends Component {
                 <DropdownMenu right>
                     {
                         this.props.cart.map(cartItem => (
-                            <DropdownItem >
+                            <DropdownItem key={cartItem.product.id}>
                                 <Badge color="danger" onClick ={()=>this.props.actions.removeFromCart(cartItem.product)}>X</Badge>
                                 {cartItem.product.productName}
                                 <Badge color="success">{cartItem.quantity} </Badge>

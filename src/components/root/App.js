@@ -19,7 +19,7 @@ class App extends Component {
           <Route path="/" exact component={Dashboard}/>
           <Route path="/product" exact component={Product}/>
           <Route path="/cart" exact component={CartDetails}/>
-          <Route path="/saveProduct/:productId"component={AddOrUpdateProduct}/>
+          <Route path="/saveProduct/:productId" component={AddOrUpdateProduct}/>
           <Route path="/saveProduct/"component={AddOrUpdateProduct}/>
           <Route exact component={NotFound}/>
 

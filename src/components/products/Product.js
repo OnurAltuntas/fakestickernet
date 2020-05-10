@@ -31,11 +31,9 @@ class Product extends Component {
         <h3><Badge color="warning">Stickers</Badge></h3>
           <Row xs="5">
               {this.props.products.map(product => (
-                <Col>
+                <Col key={product.id}>
                 <Card>
-                 
                   <CardImg top width="100%" src={product.image} id="UncontrolledTooltipExample" alt="Card image cap" />
-                 
                   <CardBody>
                   <CardText >
                   <Link to={"/saveProduct/"+product.id}> {product.productName}</Link>
