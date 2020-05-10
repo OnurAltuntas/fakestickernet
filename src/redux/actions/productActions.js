@@ -33,7 +33,6 @@ export function saveProduct(product) {
 export async function handleResponse(response){
     if(response.ok){
         return response.json();
-        console.log("eklendi");
     }
     else{
         const error = await response.text()

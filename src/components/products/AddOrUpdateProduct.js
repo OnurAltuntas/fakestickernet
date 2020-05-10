@@ -22,7 +22,7 @@ function AddOrUpdateProduct({
         }
         setProduct({ ...props.product })
 
-    }, [props.product]);
+    }, []);
 
     function handleChange(event) {
         const { name, value } = event.target;
