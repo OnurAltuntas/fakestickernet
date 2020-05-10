@@ -24,7 +24,7 @@ class CartDetails extends Component {
                     <h3><Badge color="warning">Cart Details</Badge></h3>
                     <Row xs="5">
                         {this.props.cart.map(cartItem => (
-                            <Col>
+                            <Col key={cartItem.product.id}>
                                 <Card>
                                     <CardImg top width="100%" src={cartItem.product.image} alt="Card image cap" />
                                     <CardBody>
